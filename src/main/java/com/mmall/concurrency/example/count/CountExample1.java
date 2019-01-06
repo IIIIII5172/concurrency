@@ -1,11 +1,13 @@
-package com.mmall.concurrency;
+package com.mmall.concurrency.example.count;
 
 
-
-import com.mmall.concurrency.annoations.NotThreadSafe;
+import com.mmall.concurrency.example.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
 /**
  * @author IIIIII
@@ -14,7 +16,7 @@ import java.util.concurrent.*;
  **/
 @Slf4j
 @NotThreadSafe
-public class ConcurrencyTest {
+public class CountExample2 {
     public static int clientTotal=5000;
     public static int threadTotal=200;
     public static int count=0;

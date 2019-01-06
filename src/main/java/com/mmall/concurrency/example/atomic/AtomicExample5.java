@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.LongAdder;
 
 @Slf4j
 @ThreadSafe
-public class AtomicExample4 {
+public class AtomicExample5 {
     private static AtomicReference<Integer> count=new AtomicReference<>(0);
 
     public static void main(String[] args){

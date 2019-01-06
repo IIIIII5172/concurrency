@@ -1,14 +1,13 @@
-package com.mmall.concurrency.atomic;
+package com.mmall.concurrency.example.count;
 
 
-import com.mmall.concurrency.annoations.ThreadSafe;
+import com.mmall.concurrency.example.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author IIIIII
@@ -16,12 +15,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @package com.mmall.concurrency
  **/
 @Slf4j
-@ThreadSafe
-public class AtomicExample1 {
+@NotThreadSafe
+public class CountExample1 {
     public static int clientTotal=5000;
     public static int threadTotal=200;
-    //cont换成AtomicInteger，这里重点，原子性，CAS原理
-    public static AtomicInteger count=new AtomicInteger(0);
+    public static int count=0;
 
     public static void main(String[] args)throws  Exception {
         ExecutorService executorService= Executors.newCachedThreadPool();
@@ -44,10 +42,6 @@ public class AtomicExample1 {
         log.info("count:{}",count);
     }
     private static void add(){
-        //先加还是先取值
-        /*这里的源码调用unsafe类的getAndAddInt方法
-        * */
-        count.incrementAndGet();
-//        count.getAndAccumulate();
+        count++;
     }
 }
