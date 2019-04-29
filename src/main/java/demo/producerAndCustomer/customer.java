@@ -21,9 +21,9 @@ public class customer extends  Thread {
         }catch (InterruptedException e){
         }
     }
-    //结果正常
+    //执行
     public static void main(String[] args) {
-        MyBlockingQueue<String> queue=new MyBlockingQueue<>(10);
+        MyBlockingQueue<String> queue=new MyBlockingQueue<>(1);//队列最大容量
         new producer(queue).start();
         new customer(queue).start();
     }

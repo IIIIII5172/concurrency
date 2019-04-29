@@ -1,30 +1,35 @@
 package com.mmall.concurrency.example.singleton;
 
 import com.mmall.concurrency.example.annoations.NotThreadSafe;
+import com.mmall.concurrency.example.annoations.Recommend;
+import com.mmall.concurrency.example.annoations.ThreadSafe;
 
 /**
  * @author IIIIII
  * @create 2019-01-07-22:34
  * @package com.mmall.concurrency.example.singleton
  **/
-/*单例模式
-* 懒汉模式
-* 实例在第一次使用时创建
-* 多线程时可能被创建出多个实例
-*
-* */
-@NotThreadSafe
-public class SingletonSimple1 {
-    private SingletonSimple1(){
-
+//推荐使用枚举模式，最安全
+@ThreadSafe
+@Recommend
+public class SingletonSimple6 {
+    private SingletonSimple6(){
     }
 
-    private static SingletonSimple1 instance=null;
+    public static SingletonSimple6 getInstance(){
+        return Singleton.INSTANCE.getInstance();
+    }
 
-    public static SingletonSimple1 getInstance(){
-         if(instance==null){
-             instance=new SingletonSimple1();
-         }
-         return instance;
+    private enum Singleton{
+        INSTANCE;
+
+        private SingletonSimple6 singletonSimple6;
+        //JVM保证这个枚举的构造只被调用一次
+        Singleton(){
+            singletonSimple6=new SingletonSimple6();
+        }
+        public  SingletonSimple6 getInstance(){
+            return singletonSimple6;
+        }
     }
 }

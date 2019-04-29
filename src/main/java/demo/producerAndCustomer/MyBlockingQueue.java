@@ -9,7 +9,7 @@ import java.util.Queue;
  * @package demo.producerAndCustomer
  **/
 public class MyBlockingQueue<E> {
-    private Queue<E> queue=null;
+    private  Queue<E> queue=null;
     private int limit;
 
     public MyBlockingQueue(int limit){

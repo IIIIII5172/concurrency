@@ -1,12 +1,11 @@
-package com.mmall.concurrency.atomic;
+package com.mmall.concurrency.example.atomic;
 
 
-import com.mmall.concurrency.annoations.ThreadSafe;
+import com.mmall.concurrency.example.annoations.ThreadSafe;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReference;
 
 
 @Slf4j

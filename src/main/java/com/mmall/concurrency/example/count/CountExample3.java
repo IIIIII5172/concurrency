@@ -16,7 +16,7 @@ import java.util.concurrent.Semaphore;
  **/
 @Slf4j
 @NotThreadSafe
-public class CountExample1 {
+public class CountExample3 {
     public static int clientTotal=5000;
     public static int threadTotal=200;
     public static int count=0;
@@ -41,7 +41,7 @@ public class CountExample1 {
         executorService.shutdown();
         log.info("count:{}",count);
     }
-    private static void add(){
+    private static synchronized void add(){
         count++;
     }
 }

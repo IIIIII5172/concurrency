@@ -13,16 +13,16 @@ import com.mmall.concurrency.example.annoations.NotThreadSafe;
 *
 * */
 @NotThreadSafe
-public class SingletonSimple6 {
-    private SingletonSimple6(){
+public class SingletonSimple5 {
+    private SingletonSimple5(){
 
     }
 
-    private static SingletonSimple6 instance=null;
+    private static SingletonSimple5 instance=null;
     static {
-        instance=new SingletonSimple6();
+        instance=new SingletonSimple5();
     }
-    public static SingletonSimple6 getInstance(){
+    public static SingletonSimple5 getInstance(){
 
          return instance;
     }

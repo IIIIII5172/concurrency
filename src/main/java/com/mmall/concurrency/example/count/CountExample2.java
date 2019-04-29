@@ -14,7 +14,7 @@ import java.util.concurrent.*;
  **/
 @Slf4j
 @NotThreadSafe
-public class CountExample1 {
+public class CountExample2 {
     public static int clientTotal=5000;
     public static int threadTotal=200;
     public static int count=0;
